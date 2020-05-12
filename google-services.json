@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "304080903707",
+    "firebase_url": "https://project1-488ba.firebaseio.com",
+    "project_id": "project1-488ba",
+    "storage_bucket": "project1-488ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:304080903707:android:4e87c6b112148d485ae2be",
+        "android_client_info": {
+          "package_name": "com.mervesahin.project1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "304080903707-ob0ht9sv7cjvldiktbodbdjgmjsqvbqp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvmWkO33T0noMok8ZUDvn0fTpo7wyyASM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "304080903707-ob0ht9sv7cjvldiktbodbdjgmjsqvbqp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
