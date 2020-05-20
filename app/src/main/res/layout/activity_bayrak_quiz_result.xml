@@ -7,27 +7,24 @@
     android:background="@color/colorPrimary"
     tools:context=".BayrakQuizResultActivity">
 
-    <TextView
-        android:id="@+id/txtYuzde"
-        android:layout_width="298dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="51dp"
-        android:text="Puan: 0"
-        android:textAlignment="center"
+    <Button
+        android:id="@+id/btnTekrarDene"
+        android:layout_width="262dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/radius_button_shape"
+        android:text="tekrar dene"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnTekrarDene"
+        app:layout_constraintBottom_toTopOf="@+id/btnOyundanCik"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSonuc" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txtSonuc"
         android:layout_width="298dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="375dp"
-        android:layout_marginBottom="12dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="15dp"
         android:text="5 DOĞRU 1 YANLIŞ"
         android:textAlignment="center"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
@@ -35,20 +32,32 @@
         app:layout_constraintBottom_toTopOf="@+id/txtYuzde"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtYuzde"
+        android:layout_width="298dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="101dp"
+        android:text="Puan: 0"
+        android:textAlignment="center"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnTekrarDene"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btnTekrarDene"
-        android:layout_width="195dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="53dp"
-        android:background="@color/colorAccent"
-        android:text="tekrar dene"
+        android:id="@+id/btnOyundanCik"
+        android:layout_width="262dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="42dp"
+        android:background="@drawable/radius_button_shape"
+        android:text="Oyundan Çık"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtYuzde" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

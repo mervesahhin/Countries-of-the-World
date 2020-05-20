@@ -1,3 +1,4 @@
+
 package com.mervesahin.project1;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,20 +16,20 @@ import java.util.HashSet;
 
 public class BayrakQuizActivity extends AppCompatActivity {
 
-    private TextView txtSoruSayisi,txtDogruSayisi,txtYanlisSayisi;
+    private TextView txtSoruSayisi, txtDogruSayisi, txtYanlisSayisi;
     private ImageView imageBayrak;
-    private Button BtnA,BtnB,BtnC,BtnD;
+    private Button BtnA, BtnB, BtnC, BtnD;
     private ArrayList<Bayraklar> sorularListe;
     private ArrayList<Bayraklar> yanlisSeceneklerListe;
     private Bayraklar dogruSoru;
     private BayrakQuizVeritabani vt;
     //sayaç
-    private int soruSayac=0;
-    private int yanlisSayac=0;
-    private int dogruSayac=0;
+    private int soruSayac = 0;
+    private int yanlisSayac = 0;
+    private int dogruSayac = 0;
     //secenekler
-    private HashSet<Bayraklar>seceneklerKaristirmaListe=new HashSet<>();
-    private ArrayList<Bayraklar> seceneklerListe=new ArrayList<>();
+    private HashSet<Bayraklar> seceneklerKaristirmaListe = new HashSet<>();
+    private ArrayList<Bayraklar> seceneklerListe = new ArrayList<>();
 
 
     @Override
@@ -36,25 +37,26 @@ public class BayrakQuizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bayrak_quiz);
 
-        txtSoruSayisi=findViewById(R.id.txtSoruSayisi);
-        txtDogruSayisi=findViewById(R.id.txtDogruSayisi);
-        txtYanlisSayisi=findViewById(R.id.txtYanlisSayisi);
-        imageBayrak=findViewById(R.id.imageBayrak);
-        BtnA=findViewById(R.id.BtnA);
-        BtnB=findViewById(R.id.BtnB);
-        BtnC=findViewById(R.id.BtnC);
-        BtnD=findViewById(R.id.BtnD);
+        txtSoruSayisi = findViewById(R.id.txtSoruSayisi);
+        txtDogruSayisi = findViewById(R.id.txtDogruSayisi);
+        txtYanlisSayisi = findViewById(R.id.txtYanlisSayisi);
+        imageBayrak = findViewById(R.id.imageBayrak);
 
-        vt=new BayrakQuizVeritabani(this);
-        sorularListe=new BayraklarDao().rastgele5Getir(vt);
+        BtnA = findViewById(R.id.BtnA);
+        BtnB = findViewById(R.id.BtnB);
+        BtnC = findViewById(R.id.BtnC);
+        BtnD = findViewById(R.id.BtnD);
+
+        vt = new BayrakQuizVeritabani(this);
+        sorularListe = new BayraklarDao().rastgele5Getir(vt);
         soruYukle();
 
 
         BtnA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               dogruKontrol(BtnA);
-               sayacKontrol();
+                dogruKontrol(BtnA);
+                sayacKontrol();
 
             }
         });
@@ -88,14 +90,14 @@ public class BayrakQuizActivity extends AppCompatActivity {
 
     }
 
-    public void soruYukle(){
-        txtSoruSayisi.setText((soruSayac+1)+".SORU");
-        txtDogruSayisi.setText("Doğru :"+dogruSayac);
-        txtYanlisSayisi.setText("Yanlış :"+yanlisSayac);
+    public void soruYukle() {
+        txtSoruSayisi.setText((soruSayac + 1) + ".SORU");
+        txtDogruSayisi.setText("Doğru :" + dogruSayac);
+        txtYanlisSayisi.setText("Yanlış :" + yanlisSayac);
 
-        dogruSoru=sorularListe.get(soruSayac);
-        yanlisSeceneklerListe=new BayraklarDao().rastgele3YanlısSecenekGetir(vt,dogruSoru.getBayrak_id());
-        imageBayrak.setImageResource(getResources().getIdentifier(dogruSoru.getBayrak_resim(),"drawable",getPackageName()));
+        dogruSoru = sorularListe.get(soruSayac);
+        yanlisSeceneklerListe = new BayraklarDao().rastgele3YanlısSecenekGetir(vt, dogruSoru.getBayrak_id());
+        imageBayrak.setImageResource(getResources().getIdentifier(dogruSoru.getBayrak_resim(), "drawable", getPackageName()));
 
         seceneklerKaristirmaListe.clear();
         seceneklerKaristirmaListe.add(dogruSoru);
@@ -105,7 +107,7 @@ public class BayrakQuizActivity extends AppCompatActivity {
 
         seceneklerListe.clear();
 
-        for(Bayraklar b:seceneklerKaristirmaListe){
+        for (Bayraklar b : seceneklerKaristirmaListe) {
             seceneklerListe.add(b);
         }
 
@@ -116,32 +118,29 @@ public class BayrakQuizActivity extends AppCompatActivity {
 
     }
 
-    public void dogruKontrol(Button button){
-        String buttonYazi=button.getText().toString();
-        String dogruCevap=dogruSoru.getBayrak_adi();
+    public void dogruKontrol(Button button) {
+        String buttonYazi = button.getText().toString();
+        String dogruCevap = dogruSoru.getBayrak_adi();
 
-        if(buttonYazi.equals(dogruCevap)){
+        if (buttonYazi.equals(dogruCevap)) {
             dogruSayac++;
-        }else{
+        } else {
             yanlisSayac++;
         }
 
 
     }
-    public void sayacKontrol(){
+
+    public void sayacKontrol() {
         soruSayac++;
-        if(soruSayac !=5){
+        if (soruSayac != 5) {
             soruYukle();
-        }else{
-            Intent intent=new Intent(BayrakQuizActivity.this,BayrakQuizResultActivity.class);
-            intent.putExtra("dogruSayac",dogruSayac);
+        } else {
+            Intent intent = new Intent(BayrakQuizActivity.this, BayrakQuizResultActivity.class);
+            intent.putExtra("dogruSayac", dogruSayac);
             startActivity(intent);
             finish();
         }
 
     }
-
-
-
-
 }

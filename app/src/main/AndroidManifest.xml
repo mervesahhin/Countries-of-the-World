@@ -6,7 +6,6 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,12 +13,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SehirlerDetay"></activity>
+        <activity android:name=".CountryDetail"></activity>
+        <activity android:name=".ContinentInfoActivity" />
+        <activity android:name=".UlkeleriTaniActivity" />
+        <activity android:name=".SehirlerDetay" />
         <activity android:name=".UlkelerSehirlerQuizActivity" />
         <activity android:name=".HaritaActivity" />
         <activity android:name=".BayraklariTaniActivity" />
         <activity android:name=".TurkiyeyiTaniActivity" />
-        <activity android:name=".UlkeleriTaniActivity" />
         <activity android:name=".BayrakQuizResultActivity" />
         <activity android:name=".BayrakQuizActivity" />
         <activity android:name=".Main3Activity" />

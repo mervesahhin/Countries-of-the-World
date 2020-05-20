@@ -31,7 +31,7 @@ public class BayraklariTaniActivity extends AppCompatActivity {
         Bayraklar b1=new Bayraklar(1,"ABHAZYA","abhazya");
         Bayraklar b2=new Bayraklar(2,"AFGANİSTAN","afganistan");
         Bayraklar b3=new Bayraklar(3,"ALMANYA","almanya");
-        Bayraklar b4=new Bayraklar(4,"AMERİKA BİRLEŞİK DEVLETLER","amerikabirlesikd");
+        Bayraklar b4=new Bayraklar(4,"AMERİKA BİRLEŞİK DEVLETLERİ","amerkabirlesikd");
         Bayraklar b5=new Bayraklar(5,"ANDORRA","andorra");
         Bayraklar b6=new Bayraklar(6,"ANGOLA","angola");
         Bayraklar b7=new Bayraklar(7,"ARJANTİN","arjantin");
@@ -46,9 +46,9 @@ public class BayraklariTaniActivity extends AppCompatActivity {
         Bayraklar b16=new Bayraklar(16,"BELÇİKA","belcika");
         Bayraklar b17=new Bayraklar(17,"BELİZE","belize");
         Bayraklar b18=new Bayraklar(18,"BENİN","benin");
-        Bayraklar b19=new Bayraklar(19,"BEYAZ RUSYA","beyazRusya");
+        Bayraklar b19=new Bayraklar(19,"BEYAZ RUSYA","beyazrusya");
         Bayraklar b20=new Bayraklar(20,"BHUTAN","bhutan");
-        Bayraklar b21=new Bayraklar(21,"BİRLEŞİK ARAP EMİRLİKLERİ","birlesikArapE");
+        Bayraklar b21=new Bayraklar(21,"BİRLEŞİK ARAP EMİRLİKLERİ","birlesikarape");
         Bayraklar b22=new Bayraklar(22,"BOLİVYA","bolivya");
         Bayraklar b23=new Bayraklar(23,"BOSNAHERSEK","bosnahersek");
         Bayraklar b24=new Bayraklar(24,"BOTSVANA","botsvana");
@@ -173,7 +173,6 @@ public class BayraklariTaniActivity extends AppCompatActivity {
         bayraklarArrayList2.add(b62);
         bayraklarArrayList2.add(b63);
         bayraklarArrayList2.add(b64);
-
         bayraklarArrayList2.add(b65);
         bayraklarArrayList2.add(b66);
         bayraklarArrayList2.add(b67);

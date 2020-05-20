@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,8 +13,67 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.xwray.groupie.GroupieViewHolder;
+import com.xwray.groupie.Item;
+
 import java.util.List;
 
+public class DetailsAdapter extends Item<GroupieViewHolder> {
+    public Details details;
+    public Context mContext;
+
+    public DetailsAdapter(Context mContext, Details details) {
+        this.mContext = mContext;
+        this.details = details;
+    }
+
+    @Override
+    public void bind(@NonNull GroupieViewHolder viewHolder, int position) {
+        View view = viewHolder.itemView;
+
+        TextView txtsehirdetay = view.findViewById(R.id.txtsehirdetay);
+        txtsehirdetay.setText(details.getDetails_name());
+
+        TextView txtsehirdetaybilgi = view.findViewById(R.id.txtsehirdetaybilgi);
+        txtsehirdetaybilgi.setText(details.getDetails_detail());
+
+        ImageView imagesehirdetay = view.findViewById(R.id.imagesehirdetay);
+        Glide.with(mContext).load("http://goo.gl/gEgYUd").into(imagesehirdetay);
+
+
+
+    }
+
+    @Override
+    public int getLayout() {
+        return R.layout.sehirlerdetay_card_tasarim;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 public class detaylarAdapter extends RecyclerView.Adapter<detaylarAdapter.CardViewTasarimNesneleriniTutucu2> {
     private Context mContext2;
     private List<Detaylar> detaylarList;
@@ -65,7 +125,7 @@ public class detaylarAdapter extends RecyclerView.Adapter<detaylarAdapter.CardVi
     public int getItemCount() {
         return detaylarList.size();
     }
-}
+}*/
 
 
 

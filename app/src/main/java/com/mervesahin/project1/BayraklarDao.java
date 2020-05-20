@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class BayraklarDao  {
     public ArrayList<Bayraklar> rastgele5Getir(BayrakQuizVeritabani vt){
-       ArrayList<Bayraklar> bayraklarArrayList=new ArrayList<>();
+        ArrayList<Bayraklar> bayraklarArrayList=new ArrayList<>();
         SQLiteDatabase db=vt.getWritableDatabase();
         Cursor c=db.rawQuery("SELECT * FROM bayraklar ORDER BY RANDOM() LIMIT 5",null);
 

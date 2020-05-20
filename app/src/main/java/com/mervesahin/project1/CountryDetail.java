@@ -9,8 +9,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -20,49 +18,50 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.xwray.groupie.GroupAdapter;
 import com.xwray.groupie.GroupieViewHolder;
-import com.xwray.groupie.Item;
-import com.xwray.groupie.OnItemClickListener;
 
 import java.util.ArrayList;
 
-public class SehirlerDetay extends AppCompatActivity {
+public class CountryDetail extends AppCompatActivity {
+
     FirebaseFirestore db;
-    private RecyclerView sehirdetayRv;
+    private RecyclerView countrydetailRv;
     private Context mContext;
-    private ArrayList<Details> detaylarArrayList= new ArrayList<>();
+    private ArrayList<Country> countryArrayList= new ArrayList<>();
 
     GroupAdapter adapter = new GroupAdapter<GroupieViewHolder>();
-    private City city;
+    private Continent continent;
 
     private String logTAG = "DetayTag";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sehirler_detay2);
+        setContentView(R.layout.activity_country_detail);
 
         mContext = getApplicationContext();
 
-        city=new City();
+        continent=new Continent();
 
         Intent intent=getIntent();
-        city.setCity_id(intent.getStringExtra("cityID"));
-        city.setCity_name(intent.getStringExtra("cityName"));
+        continent.setContinent_id(intent.getStringExtra("continentID"));
+        continent.setContinent_name(intent.getStringExtra("continentName"));
+        continent.setContinent_image(intent.getStringExtra("continentImage"));
 
         db = FirebaseFirestore.getInstance();
         mContext = getApplicationContext();
-        sehirdetayRv=findViewById(R.id.sehirdetayRv);
+        countrydetailRv=findViewById(R.id.countrydetailRv);
 
-        sehirdetayRv.setHasFixedSize(true);
-        sehirdetayRv.setLayoutManager(new LinearLayoutManager(this));
+        countrydetailRv.setHasFixedSize(true);
+        countrydetailRv.setLayoutManager(new LinearLayoutManager(this));
 
-        sehirdetayRv.setAdapter(adapter);
+        countrydetailRv.setAdapter(adapter);
 
-        fetchCities();
+        fetchContinent();
     }
 
-    private void fetchCities() {
-        String db_path="details/"+city.getCity_id()+"/"+city.getCity_id();
+    private void fetchContinent() {
+        String db_path="country/"+continent.getContinent_id()+"/"+continent.getContinent_id();
         db.collection(db_path)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -70,15 +69,14 @@ public class SehirlerDetay extends AppCompatActivity {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
 
                         for (DocumentSnapshot doc : task.getResult()) {
-                            String details_id = doc.getString("details_id");
-                            String details_name = doc.getString("details_name");
-                            String details_image = doc.getString("details_image");
-                            String details_detail= doc.getString("details_detail");
+                            String country_id = doc.getString("country_id");
+                            String country_name = doc.getString("country_name");
+                            String country_image = doc.getString("country_image");
 
-                            Details detail = new Details(details_id, details_name,details_detail,details_image);
-                            adapter.add(new DetailsAdapter(mContext, detail));
+                            Country country = new Country(country_id, country_name,country_image);
+                            adapter.add(new CountryAdapter(mContext, country));
 
-                            Log.d(logTAG, details_id + " " + details_name);
+                            Log.d(logTAG, country_id + " " + country_name);
                         }
                         adapter.notifyDataSetChanged();
                     }

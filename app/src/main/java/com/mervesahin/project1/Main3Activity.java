@@ -78,8 +78,8 @@ public class Main3Activity extends AppCompatActivity {
                 startActivity(new Intent(Main3Activity.this,BayrakQuizActivity.class));
             }
         });
-
     }
+
 
 
     public void veritabaniKopyala(){

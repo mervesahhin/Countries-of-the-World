@@ -29,7 +29,7 @@ public class BayrakAdapter extends RecyclerView.Adapter<BayrakAdapter.CardViewTa
 
     @Override
     public void onBindViewHolder(@NonNull CardViewTasarımNesneleriniTutucu holder, int position) {
-         Bayraklar bayrak=bayraklarList.get(position);
+        Bayraklar bayrak=bayraklarList.get(position);
         holder.txtUlkeAdi.setText(bayrak.getBayrak_adi());
         holder.imageBayrakResim.setImageResource(mContext.getResources()
                 .getIdentifier(bayrak.getBayrak_resim(),"drawable",mContext.getPackageName()));

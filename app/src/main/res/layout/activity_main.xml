@@ -38,10 +38,10 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="235dp"
+        android:layout_width="275dp"
         android:layout_height="65dp"
         android:layout_marginBottom="63dp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/radius_button_shape"
         android:onClick="btnBasla"
         android:text="BAŞLA"
         android:textColor="@android:color/background_light"
@@ -49,7 +49,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        />
+
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

@@ -25,13 +25,13 @@
 
     <Button
         android:id="@+id/BtnD"
-        android:layout_width="250dp"
+        android:layout_width="285dp"
         android:layout_height="50dp"
         android:layout_marginStart="67dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="67dp"
         android:layout_marginBottom="50dp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/radius_button_shape"
         android:text="bulgaristan"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -52,12 +52,12 @@
 
     <Button
         android:id="@+id/BtnC"
-        android:layout_width="250dp"
+        android:layout_width="285dp"
         android:layout_height="50dp"
         android:layout_marginStart="71dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="71dp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/radius_button_shape"
         android:text="norveç"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         app:layout_constraintBottom_toTopOf="@+id/BtnD"
@@ -67,10 +67,11 @@
 
     <Button
         android:id="@+id/BtnA"
-        android:layout_width="250dp"
+        android:layout_width="285dp"
         android:layout_height="50dp"
         android:layout_marginBottom="1dp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/radius_button_shape"
+
         android:text="romanya"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         app:layout_constraintBottom_toTopOf="@+id/BtnB"
@@ -80,10 +81,10 @@
 
     <Button
         android:id="@+id/BtnB"
-        android:layout_width="250dp"
+        android:layout_width="285dp"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/radius_button_shape"
         android:text="italya"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         app:layout_constraintBottom_toTopOf="@+id/BtnC"
