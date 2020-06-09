@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.QuestionTestActivity">
+    tools:context=".ui.QuestionImageActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -23,24 +23,19 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="8dp"
-            android:layout_marginTop="5dp"
-            android:text="1/5"
+            android:text="1/10"
             android:textColor="@color/colorWhite"
             android:textSize="22sp"
             android:textStyle="bold" />
 
-
         <ImageView
-            android:id="@+id/image"
+            android:id="@+id/question2"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_margin="50dp"
-            app:srcCompat="@drawable/abhazya"
-            android:scaleType="centerCrop"
-            android:gravity="center"/>
-
-
-
+            android:layout_height="170dp"
+            android:layout_margin="60dp"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -59,11 +54,12 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <Button
-            android:id="@+id/BtnA"
+            android:id="@+id/option1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:background="@drawable/radius_button_shape"
+            android:backgroundTint="@color/colorAccent"
             android:elevation="3dp"
             android:padding="16dp"
             android:text="A şıkkı"
@@ -72,11 +68,12 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/BtnB"
+            android:id="@+id/option2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:background="@drawable/radius_button_shape"
+            android:backgroundTint="@color/colorAccent"
             android:elevation="3dp"
             android:padding="16dp"
             android:text="B şıkkı"
@@ -85,11 +82,12 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/BtnC"
+            android:id="@+id/option3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:background="@drawable/radius_button_shape"
+            android:backgroundTint="@color/colorAccent"
             android:elevation="3dp"
             android:padding="16dp"
             android:text="C şıkkı"
@@ -98,11 +96,12 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/BtnD"
+            android:id="@+id/option4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:background="@drawable/radius_button_shape"
+            android:backgroundTint="@color/colorAccent"
             android:elevation="3dp"
             android:padding="16dp"
             android:text="D şıkkı"
@@ -112,7 +111,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/countdown2"
+        android:id="@+id/timer"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginEnd="16dp"
@@ -123,8 +122,6 @@
         android:textStyle="bold"
         android:gravity="center"
         android:background="@drawable/radius_button_shape"
-        android:backgroundTint="@color/colorAccent"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

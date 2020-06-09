@@ -13,19 +13,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CountryDetail"></activity>
-        <activity android:name=".ContinentInfoActivity" />
-        <activity android:name=".UlkeleriTaniActivity" />
-        <activity android:name=".SehirlerDetay" />
-        <activity android:name=".UlkelerSehirlerQuizActivity" />
-        <activity android:name=".HaritaActivity" />
-        <activity android:name=".BayraklariTaniActivity" />
-        <activity android:name=".TurkiyeyiTaniActivity" />
-        <activity android:name=".BayrakQuizResultActivity" />
-        <activity android:name=".BayrakQuizActivity" />
-        <activity android:name=".Main3Activity" />
-        <activity android:name=".Main2Activity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.QuizImageCategoryActivity"/>
+        <activity android:name=".ui.QuestionImageActivity"/>
+        <activity android:name=".ui.QuizScoreActivity" />
+        <activity android:name=".ui.QuestionTestActivity" />
+        <activity android:name=".ui.SettingsActivity" />
+        <activity android:name=".ui.CountryCityDetailActivity" />
+        <activity android:name=".ui.CountryNameActivity" />
+        <activity android:name=".ui.ContinentActivity" />
+        <activity android:name=".ui.TurkeyCityDetailsActivity" />
+        <activity android:name=".ui.QuizTestCategoryActivity" />
+        <activity android:name=".ui.FlagsInfoActivity" />
+        <activity android:name=".ui.TurkeyCityNameInfoActivity" />
+        <activity android:name=".ui.BayrakQuizResultActivity" />
+        <activity android:name=".ui.BayrakQuizActivity" />
+        <activity android:name=".ui.MainPageActivity" />
+        <activity android:name=".ui.LoginActivity" />
+        <activity android:name=".ui.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
