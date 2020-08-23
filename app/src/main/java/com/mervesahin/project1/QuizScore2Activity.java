@@ -1,4 +1,4 @@
-package com.mervesahin.project1.ui;
+package com.mervesahin.project1;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,9 +11,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.mervesahin.project1.R;
+import com.mervesahin.project1.ui.MainPageActivity;
+import com.mervesahin.project1.ui.QuizImageCategoryActivity;
+import com.mervesahin.project1.ui.QuizScoreActivity;
+import com.mervesahin.project1.ui.QuizTestCategoryActivity;
 
-public class QuizScoreActivity extends AppCompatActivity {
+public class QuizScore2Activity extends AppCompatActivity {
     private TextView score;
     private Button btnTekrarla;
     private Button btnOyundanAyril;
@@ -35,7 +38,7 @@ public class QuizScoreActivity extends AppCompatActivity {
         btnTekrarla.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(QuizScoreActivity.this, QuizTestCategoryActivity.class);
+                Intent intent = new Intent(QuizScore2Activity.this, QuizImageCategoryActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -44,20 +47,20 @@ public class QuizScoreActivity extends AppCompatActivity {
         btnOyundanAyril.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder alert = new AlertDialog.Builder(QuizScoreActivity.this);
+                AlertDialog.Builder alert = new AlertDialog.Builder(QuizScore2Activity.this);
                 alert.setTitle("Oyundan Ayrıl");
                 alert.setMessage("Oyundan ayrılmak istediğinize emin misiniz?");
                 alert.setPositiveButton("Evet", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(QuizScoreActivity.this, MainPageActivity.class);
+                        Intent intent = new Intent(QuizScore2Activity.this, MainPageActivity.class);
                         startActivity(intent);
                     }
                 });
                 alert.setNegativeButton("Hayır", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(QuizScoreActivity.this,"Oyuna devam edebilirsiniz",Toast.LENGTH_LONG).show();
+                        Toast.makeText(QuizScore2Activity.this,"Oyuna devam edebilirsiniz",Toast.LENGTH_LONG).show();
 
                     }
                 });

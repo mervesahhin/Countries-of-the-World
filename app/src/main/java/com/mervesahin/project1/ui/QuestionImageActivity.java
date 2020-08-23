@@ -25,6 +25,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.mervesahin.project1.QuizScore2Activity;
 import com.mervesahin.project1.model.Question;
 import com.mervesahin.project1.R;
 
@@ -116,8 +117,6 @@ public class QuestionImageActivity extends AppCompatActivity implements View.OnC
 
     private void setQuestion() {
         timer.setText(String.valueOf(10));
-
-        //question.setText(questionList.get(0).getQuestion());
 
         Glide.with(this).load(questionList.get(0).getQuestion()).into(question2);
         option1.setText(questionList.get(0).getOptionA());
@@ -224,7 +223,7 @@ public class QuestionImageActivity extends AppCompatActivity implements View.OnC
 
         } else {
             //do to score activity
-            Intent intent = new Intent(QuestionImageActivity.this, QuizScoreActivity.class);
+            Intent intent = new Intent(QuestionImageActivity.this, QuizScore2Activity.class);
             intent.putExtra("SCORE", String.valueOf(score)+ "/" + String.valueOf(questionList.size()));
             startActivity(intent);
             finish();
@@ -263,7 +262,7 @@ public class QuestionImageActivity extends AppCompatActivity implements View.OnC
 
                             }
                             if (viewNum != 0) {
-                                ((Button) view).setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#bbdefb")));
+                                ((Button) view).setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#62727b")));
 
                             }
                             playAnim(view, 1, viewNum);

@@ -253,7 +253,7 @@ public class QuestionTestActivity extends AppCompatActivity implements View.OnCl
 
                             }
                             if (viewNum != 0) {
-                                ((Button) view).setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#bbdefb")));
+                                ((Button) view).setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#62727b")));
 
                             }
                             playAnim(view, 1, viewNum);

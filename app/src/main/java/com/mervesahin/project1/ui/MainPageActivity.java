@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.Button;
 
 
-import com.mervesahin.project1.DatabaseCopyHelper;
+import com.mervesahin.project1.HaritaActivity;
 import com.mervesahin.project1.R;
 
 import java.io.IOException;
@@ -24,7 +24,7 @@ public class MainPageActivity extends AppCompatActivity {
     private Button btnResimliQuiz;
     private Button btnBayrakTani;
     private Button btnUlkeQuiz;
-    private Button btnBayrakQuiz;
+    private Button btnHarita;
     private Toolbar toolbar;
 
 
@@ -38,14 +38,13 @@ public class MainPageActivity extends AppCompatActivity {
         btnResimliQuiz=findViewById(R.id.btnResimliQuiz);
         btnBayrakTani=findViewById(R.id.btnBayrakTani);
         btnUlkeQuiz=findViewById(R.id.btnUlkeQuiz);
-        btnBayrakQuiz=findViewById(R.id.btnBayrakQuiz);
+        btnHarita=findViewById(R.id.btnHarita);
 
        //toolbar bağlama
         toolbar=findViewById(R.id.toolbar);
         toolbar.setTitleTextColor(getResources().getColor(R.color.colorPrimary));
         setSupportActionBar(toolbar);
 
-        veritabaniKopyala();
 
         btnUlkeTanı.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,11 +81,10 @@ public class MainPageActivity extends AppCompatActivity {
 
             }
         });
-
-        btnBayrakQuiz.setOnClickListener(new View.OnClickListener() {
+        btnHarita.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainPageActivity.this,BayrakQuizActivity.class));
+            public void onClick(View v) {
+                startActivity(new Intent(MainPageActivity.this, HaritaActivity.class));
             }
         });
     }
@@ -106,20 +104,6 @@ public class MainPageActivity extends AppCompatActivity {
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
-    }
-
-
-
-    public void veritabaniKopyala(){
-        DatabaseCopyHelper helper=new DatabaseCopyHelper(this);
-
-        try {
-            helper.createDataBase();
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-
-        helper.openDataBase();
     }
 
 }
